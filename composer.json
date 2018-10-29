@@ -1,0 +1,36 @@
+{
+    "name": "inpin/lumen-foundation",
+    "description": "Lumen foundation base classes",
+    "type": "package",
+    "license": "MIT",
+    "keywords": ["trait", "lumen", "laravel", "eloquent", "request"],
+    "authors": [
+        {
+            "name": "Mohammad Nourinik",
+            "email": "enourinick@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/container": ">=5.6",
+        "illuminate/database": ">=5.6",
+        "illuminate/http": ">=5.6"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "orchestra/database": "^3.6",
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "~1.0",
+        "fzaninotto/faker": "~1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inpin\\Foundation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
