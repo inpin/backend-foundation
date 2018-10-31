@@ -3,7 +3,6 @@
 namespace Inpin\Foundation\BaseClasses;
 
 use Inpin\Foundation\Utils\Settings;
-use Illuminate\Foundation\Http\FormRequest;
 
 abstract class Request extends FormRequest
 {
