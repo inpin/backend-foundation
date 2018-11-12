@@ -2,7 +2,8 @@
 
 namespace Inpin\Foundation\BaseClasses;
 
-use Inpin\Foundation\Utils\Settings;
+use Illuminate\Foundation\Http\FormRequest;
+use Inpin\Foundation\Utils\Helper;
 
 abstract class Request extends FormRequest
 {
@@ -29,10 +30,10 @@ abstract class Request extends FormRequest
             case 'DELETE':
                 return [];
             case 'POST':
-                return Settings::appendParentToArrayKeys($this->postRules($prefix), $prefix);
+                return Helper::appendParentToArrayKeys($this->postRules($prefix), $prefix);
             case 'PUT':
             case 'PATCH':
-                return Settings::appendParentToArrayKeys($this->putRules($prefix), $prefix);
+                return Helper::appendParentToArrayKeys($this->putRules($prefix), $prefix);
         }
     }
 
