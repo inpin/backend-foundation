@@ -1,6 +1,6 @@
 {
-  "name": "inpin/laravel-foundation",
-  "description": "Laravel foundation base classes",
+  "name": "inpin/backend-foundation",
+  "description": "Backend (Laravel) foundation base classes",
     "type": "package",
     "license": "MIT",
     "keywords": ["trait", "lumen", "laravel", "eloquent", "request"],
