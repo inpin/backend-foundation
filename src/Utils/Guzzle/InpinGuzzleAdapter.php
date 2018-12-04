@@ -47,7 +47,7 @@ class InpinGuzzleAdapter
     public function apiCall(string $url, string $method = 'GET', array $body = [], array $params = [], array $headers = [])
     {
         return $this->client->request($method, $url, [
-            'body' => $body,
+            'json' => $body,
             'query' => $params,
             'headers' => $headers,
         ]);
@@ -66,10 +66,17 @@ class InpinGuzzleAdapter
     {
         $multipart = [];
         foreach ($files as $fileName => $filePath) {
-            $multipart[] = [
-                'name' => $fileName,
-                'contents' => fopen($filePath, 'r'),
-            ];
+            if (filter_var($filePath, FILTER_VALIDATE_URL)) {
+                $multipart[] = [
+                    'name' => $fileName,
+                    'contents' => fopen($filePath, 'r'),
+                ];
+            } else {
+                $multipart[] = [
+                    'name' => $fileName,
+                    'contents' => $filePath,
+                ];
+            }
         }
 
         return $this->client->request($method, $url, [
